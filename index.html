@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Web Page</title>
+    <link rel="stylesheet" <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Unit Converter</h1>
+    </header>
+
+    <main>
+      <button>Length</button>
+      <button>Weight</button>
+      <button>Temperature</button>
+
+      <form action="/submit-form" method="POST">
+        <div>
+          <label for="length">Enter the length to convert</label>
+          <input type="text" id="length" name="length" />
+
+          <label for="from">Unit to Convert from</label>
+          <input type="text" id="from" name="from" />
+
+          <label for="to">Unit to Convert to</label>
+          <input type="text" id="to" name="to" />
+
+          <button type="button" id="submit_button">Convert</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 My Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
