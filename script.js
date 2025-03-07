@@ -13,4 +13,23 @@ document
     console.log(from);
 
     console.log(`Length: ${length}, From: ${from}, To: ${to}`);
+
+    let convertData = {
+      length: length,
+      from: from,
+      to: to,
+    };
+
+    console.log("Sending data to Flask:", convertData);
+
+    fetch("http://127.0.0.1:5000/convert", {
+      // Sends request to backend
+      method: "POST", // request method
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(convertData),
+    })
+      .then((response) => response.json()) // recieves response from backend
+      .then((data) => {
+        console.log("Server Response:", data);
+      });
   });
