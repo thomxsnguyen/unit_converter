@@ -11,8 +11,6 @@ def convert_units():
   return jsonify({"message": "Data received successfully", "data": data})
 
 
-def convert_length_to_units(data){
-   pass
-}
+
 if __name__ == '__main__':
     app.run(debug=True)
