@@ -4,6 +4,7 @@ document
     event.preventDefault();
 
     let button = document.getElementById("submit_button").valueOf;
+    const resultDiv = document.getElementById("result");
     if (!button) {
       console.error("Button id not found");
     }
@@ -23,15 +24,16 @@ document
     console.log("Sending data to Flask:", convertData);
 
     fetch("http://127.0.0.1:5000/convert", {
-      // Sends request to backend
-      method: "POST", // request method
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(convertData),
     })
-      .then((response) => response.json()) // recieves response from backend
+      .then((response) => response.json())
       .then((data) => {
-        console
-          .log("Server Response:", data)
-          .catch((err) => console.error("Fetech failed", err));
+        console.log("Server Response:", data);
+        document.getElementById("result").innerText = "hello";
+      })
+      .catch((err) => {
+        console.error("Fetch failed:", err);
       });
   });
