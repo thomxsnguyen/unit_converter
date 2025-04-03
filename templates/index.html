@@ -11,32 +11,38 @@
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Unit Converter</h1>
-    </header>
+    <div class="box">
+      <header>
+        <h1>Unit Converter</h1>
+      </header>
 
-    <main>
-      <button>Length</button>
-      <button>Weight</button>
-      <button>Temperature</button>
-
-      <form action="/submit-form" method="POST">
-        <div>
-          <label for="length">Enter the length to convert</label>
-          <input type="text" id="length" name="length" />
-
-          <label for="from">Unit to Convert from</label>
-          <input type="text" id="from" name="from" />
-
-          <label for="to">Unit to Convert to</label>
-          <input type="text" id="to" name="to" />
+      <main>
+        <div class="link">
+          <a href="/length-converter" class="link-button">Length</a>
+          <a href="/length-converter" class="link-button">Weight</a>
+          <a href="/length-converter" class="link-button">Temperature</a>
+        </div>
+        <form action="/submit-form" method="POST">
+          <div>
+            <label for="length">Enter the length to convert</label>
+            <input type="text" id="length" name="length" />
+          </div>
+          <div>
+            <label for="from">Unit to Convert from</label>
+            <input type="text" id="from" name="from" />
+          </div>
+          <div>
+            <label for="to">Unit to Convert to</label>
+            <input type="text" id="to" name="to" />
+          </div>
 
           <button type="button" id="submit_button">Convert</button>
-        </div>
-        <div id="result"></div>
-      </form>
-    </main>
 
+          <div id="result"></div>
+        </form>
+      </main>
+    </div>
+    <div class></div>
     <footer>
       <p>&copy; 2025 My Website</p>
     </footer>
