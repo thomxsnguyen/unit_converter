@@ -17,8 +17,7 @@ document
       .then((response) => response.json())
       .then((data) => {
         console.log("Server Response:", data);
-        console.log(data);
-        result.innerText = data.response;
+        result.innerText = data.converted;
       })
       .catch((err) => {
         console.error("Fetch failed:", err);
