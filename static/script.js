@@ -1,8 +1,10 @@
-document
-  .getElementById("submit_button")
-  .addEventListener("click", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
+  const convertBtn = document.getElementById("submit_button");
+  const resetBtn = document.getElementById("reset_button");
+
+  convertBtn.addEventListener("click", function (event) {
     event.preventDefault();
-    const result = document.getElementById("converted-result");
+
     const length = document.getElementById("length").value;
     const from = document.getElementById("from").value;
     const to = document.getElementById("to").value;
@@ -17,16 +19,26 @@ document
       .then((response) => response.json())
       .then((data) => {
         console.log("Server Response:", data);
-        result.innerText = data.converted;
-        document.querySelector(".form1").style.display = "none";
-        document.getElementById("second-box").style.display = "block";
+        document.getElementById("converted-result").innerText = data.converted;
+        document.getElementById("form-view").style.display = "none";
+        document.getElementById("result-view").style.display = "block";
+        convertBtn.style.display = "none";
+        resetBtn.style.display = "inline-block";
       })
       .catch((err) => {
         console.error("Fetch failed:", err);
       });
   });
 
-function resetForm() {
-  document.querySelector(".form1").style.display = "block";
-  document.getElementById("second-box").style.display = "none";
-}
+  resetBtn.addEventListener("click", function () {
+    document.getElementById("length").value = "";
+    document.getElementById("from").value = "";
+    document.getElementById("to").value = "";
+    document.getElementById("converted-result").innerText = "";
+
+    document.getElementById("form-view").style.display = "block";
+    document.getElementById("result-view").style.display = "none";
+    convertBtn.style.display = "inline-block";
+    resetBtn.style.display = "none";
+  });
+});
