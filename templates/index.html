@@ -11,38 +11,43 @@
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
   </head>
   <body>
-    <div id="container"></div>
-    <div class="box">
-      <header>
-        <h1>Unit Converter</h1>
-      </header>
+    <div id="container">
+      <div class="box" id="main">
+        <header>
+          <h1>Unit Converter</h1>
+        </header>
+        <main id="content">
+          <div class="link">
+            <a href="/length-converter" class="link-button">Length</a>
+            <a href="/length-converter" class="link-button">Weight</a>
+            <a href="/length-converter" class="link-button">Temperature</a>
+          </div>
+          <div id="form-view">
+            <div>
+              <label for="length">Enter the length to convert</label>
+              <input type="text" id="length" name="length" />
+            </div>
+            <div>
+              <label for="from">Unit to Convert from</label>
+              <input type="text" id="from" name="from" />
+            </div>
+            <div>
+              <label for="to">Unit to Convert to</label>
+              <input type="text" id="to" name="to" />
+            </div>
+          </div>
 
-      <main>
-        <div class="link">
-          <a href="/length-converter" class="link-button">Length</a>
-          <a href="/length-converter" class="link-button">Weight</a>
-          <a href="/length-converter" class="link-button">Temperature</a>
+        <div id="result-view"><p id="converted-result"></p></div>
+
+        <div class="button-group">
+          <button id="submit_button">Convert</button>
+          <button id="reset_button">Reset</button>
         </div>
-        <form action="/submit-form" method="POST">
-          <div>
-            <label for="length">Enter the length to convert</label>
-            <input type="text" id="length" name="length" />
-          </div>
-          <div>
-            <label for="from">Unit to Convert from</label>
-            <input type="text" id="from" name="from" />
-          </div>
-          <div>
-            <label for="to">Unit to Convert to</label>
-            <input type="text" id="to" name="to" />
-          </div>
-
-          <button type="button" id="submit_button">Convert</button>
-        </form>
-      </main>
-    <div id="second-box"><p id="converted-result">testing</p></div>
+      </div>
+    </div>
     <footer>
       <p>&copy; 2025 My Website</p>
     </footer>
   </body>
+</main>
 </html>
