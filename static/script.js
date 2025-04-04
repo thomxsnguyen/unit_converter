@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Server Response:", data);
         document.getElementById("converted-result").innerText = data.converted;
         document.getElementById("form-view").style.display = "none";
-        document.getElementById("result-view").style.display = "block";
+        document.getElementById("result-view").style.display = "flex";
         convertBtn.style.display = "none";
-        resetBtn.style.display = "inline-block";
+        resetBtn.style.display = "flex";
       })
       .catch((err) => {
         console.error("Fetch failed:", err);
@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("to").value = "";
     document.getElementById("converted-result").innerText = "";
 
-    document.getElementById("form-view").style.display = "block";
+    document.getElementById("form-view").style.display = "flex";
     document.getElementById("result-view").style.display = "none";
-    convertBtn.style.display = "inline-block";
+    convertBtn.style.display = "flex";
     resetBtn.style.display = "none";
   });
 });

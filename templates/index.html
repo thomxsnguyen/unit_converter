@@ -16,12 +16,14 @@
         <header>
           <h1>Unit Converter</h1>
         </header>
+
         <main id="content">
           <div class="link">
             <a href="/length-converter" class="link-button">Length</a>
             <a href="/length-converter" class="link-button">Weight</a>
             <a href="/length-converter" class="link-button">Temperature</a>
           </div>
+
           <div id="form-view">
             <div>
               <label for="length">Enter the length to convert</label>
@@ -36,18 +38,22 @@
               <input type="text" id="to" name="to" />
             </div>
           </div>
-        
-        <div id="result-view"><p id="converted-result"></p></div>
 
-        <div class="button-group">
-          <button id="submit_button">Convert</button>
-          <button id="reset_button">Reset</button>
-        </div>
+          <div id="result-view">
+            <p id="result-name">Result of your calculation</p>
+            <p id="converted-result"></p>
+          </div>
+
+          <div class="button-group">
+            <button id="submit_button">Convert</button>
+            <button id="reset_button" class="hidden">Reset</button>
+          </div>
+        </main>
       </div>
     </div>
+
     <footer>
       <p>&copy; 2025 My Website</p>
     </footer>
   </body>
-</main>
 </html>
